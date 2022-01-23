@@ -1,19 +1,25 @@
 // Debouncing function is the function which waits for certain amount of time before running again.
+// One of the most common example of debouncing is search box of e-Commerce platforms which makes an API call after certain period of time only, not for each character input
+// Debouncing is very useful and handy when it comes to the performance optimization of our web application
 
-const input = document.querySelector("#search");
+const search = document.querySelector("#search");
+search.addEventListener("keyup", debounceNetworkCall(getData, 1000));
 
-const getData = () => {
-  console.log("Fetching data from API");
-};
+function debounceNetworkCall(fun, delay) {
+  let timeout;
 
-const fetchData = (task, delay) => {
   return function () {
-    setTimeout(() => {
-      task();
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+
+    timeout = setTimeout(() => {
+      return fun();
     }, delay);
   };
-};
+}
 
-const executeFunction = fetchData(getData, 1000);
-
-input.addEventListener("keyup", executeFunction);
+// function which make hypothetical call to API
+function getData() {
+  console.log(`Data fetched from API is: ${search.value}`);
+}
