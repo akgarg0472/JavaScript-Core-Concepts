@@ -1,0 +1,13 @@
+Debouncing and Throttling both are performance optimization techniques of web applications by limiting the number of time event handler method executes in a certain time frame.
+In other words, both techniques limits the rate of execution of event handler method such as API calls.
+
+# Throttling
+    - Throttling is the technique to limit the number of time event handler function to execute in a certain period of time.
+    - Example: if user clicks a button 10 times repeatedly in 1s time frame then we could set the throttling to execute next event handler after 2 seconds only, all events in between will be discarded.
+    - Basically, we are calling an event handler method again only after certain time period.
+    - Practical life example of throttling is Youtube Web applications.
+
+# Debouncing
+    - Debouncing is a technique to execute the event handler function only after the passage/completion of certain time period of occurence of event. 
+    - If there is another instance of same event occured then previous event handling request is cancelled.
+    - Example: Search bar of e-commerce websites. Network call is made only after a certain time period when user stop typing or there is a certain time period in the two events occurences.
