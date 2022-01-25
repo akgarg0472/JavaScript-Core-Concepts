@@ -1,2 +1,3 @@
 # JavaScript-Core-Concepts
-Repository containing code and some theory of some of the important concepts in JavaScript
+
+Repository for the code and basic theory of some of the important concepts in JavaScript!!!
